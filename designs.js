@@ -1,11 +1,19 @@
-// Select color input
-// Select size input
-// When size is submitted by the user, call makeGrid()
-//declaring global variables
-var table = document.getElementById('pixelCanvas');
-var tableRow = document.getElementById('inputHeight');
-var tableColumn = document.getElementById('inputWeight');
-var color = document.getElementById('colorPicker');
+/* declaring global variables to get
+the values entered by user for row, column and color picked
+and also access the area where the table is to be created
+*/
+const table = document.getElementById('pixelCanvas');
+const tableRow = document.getElementById('inputHeight');
+const tableColumn = document.getElementById('inputWeight');
+const color = document.getElementById('colorPicker');
+
+/* sizePicker is used to get the form and 
+prevent the submission of form by using preventDefault() */
+const sizePicker = document.querySelector("#sizePicker");
+sizePicker.addEventListener("submit", function(e) {
+    e.preventDefault();
+    makeGrid();
+});
 
 /*function that changes the color 
 of the selected grid with the picked color */
